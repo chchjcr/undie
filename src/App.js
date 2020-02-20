@@ -20,7 +20,7 @@ function App() {
 			</div>
 			<div>
 				<img
-					src = {'/crest-cardinals-hat.png'}
+					src = {process.env.PUBLIC_URL + '/crest-cardinals-hat.png'}
 					className = "App-logo"
 					alt = "logo"
 				/>
