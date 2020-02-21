@@ -24,8 +24,8 @@ async function getCalendar() {
 				maxAttendees: 1,
 				maxResults: 250,
 				sanitizeHtml: true,
-				timeMin: new Date(new Date(today).setUTCDate(today.getUTCDate() - 1)).toISOString(), //'2019-10-27T00:00:00Z',
-				timeMax: new Date(new Date(today).setUTCDate(today.getUTCDate() + 1)).toISOString(), //'2019-12-01T00:00:00Z',
+				timeMin: new Date(today.toDateString()).toISOString(), //'2019-10-27T00:00:00Z',
+				timeMax: new Date(new Date(today.setUTCDate(today.getUTCDate() + 1)).toDateString()).toISOString(), //'2019-12-01T00:00:00Z',
 				key: 'AIzaSyAWgkdBGseBg_AtOB2kfZXWiyp4RM6b45c' //AIzaSyBNlYH01_9Hc5S1J9vuFmu2nUqBZJNAXxs'
 			}
 		});
@@ -40,6 +40,7 @@ async function getCalendar() {
 		}) || [];
 	} catch (e) {
 		console.error(e);
+		return [];
 	}
 }
 
@@ -80,10 +81,13 @@ export default function App() {
 				{isOpen ? 'YES' : 'NO'}
 			</div>
 			{events.map((event) => {
-				if (!event.description) return null;
-				return <div className='description' dangerouslySetInnerHTML={{
-					__html: event.description
-				}} />
+				return <div className='event'>
+					{!event.description ? <div className='eventName'>
+						{event.name}
+					</div> : <div className='eventDescription' dangerouslySetInnerHTML={{
+						__html: event.description
+					}} />}
+				</div>
 			})}
 			<div>
 				The undie is open every Wednesday, Thursday, Friday, and Saturday, from 8PM to 11PM.
