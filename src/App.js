@@ -9,7 +9,7 @@ function calcDay() {
 	return true;
 }
 
-function App() {
+export default function App() {
 
 	const [isOpen, setIsOpen] = useState(calcDay());
 
@@ -37,5 +37,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
