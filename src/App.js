@@ -68,7 +68,7 @@ export default function App() {
 			<div>
 				IS THE UNDIE OPEN TONIGHT?
 			</div>
-			<div>
+			<div className='imgContainer'>
 				<img
 					src = {process.env.PUBLIC_URL + '/crest-cardinals-hat.png'}
 					className = "App-logo"
