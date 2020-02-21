@@ -10,6 +10,15 @@
 	font-size: calc(10px + 2vmin);
 	color: white;
 	letter-spacing: 2px;
+	-ms-overflow-style: none;
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.App > div {
+	margin: 10px 0;
 }
 
 .App-logo {

@@ -13,6 +13,7 @@
     "server": "node dist/index"
   },
   "dependencies": {
+    "axios": "^0.19.2",
     "bcrypt": "^3.0.8",
     "gh-pages": "^2.2.0",
     "react": "^16.12.0",
