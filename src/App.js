@@ -26,7 +26,7 @@ function App() {
 				/>
 			</div>
 			<div
-				className='isOpen'
+				className={['isOpen', isOpen ? 'open' : 'closed'].join(' ')}
 			>
 				{isOpen ? 'YES' : 'NO'}
 			</div>
